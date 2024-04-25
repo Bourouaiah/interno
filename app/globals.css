@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.home-hero-bg {
+  border-radius: 50px;
+  background-image: url(/home/hero-photo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-hero-bg {
+  background-image: url(/about/hero-photo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
