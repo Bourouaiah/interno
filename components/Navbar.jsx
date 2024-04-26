@@ -1,26 +1,24 @@
-"use client";
-
+"use client"
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { FaBars, FaX } from "react-icons/fa6";
 
 function Navbar() {
-  const [windowWidthSize, setWidthWindowSize] = useState(window.innerWidth);
-  const [isNavOpen, setIisNavOpen] = useState(false);
+  const [windowWidthSize, setWidthWindowSize] = useState(0);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   useEffect(() => {
+    setWidthWindowSize(window.innerWidth);
     const handleWindowResize = () => {
       setWidthWindowSize(window.innerWidth);
     };
-
     window.addEventListener("resize", handleWindowResize);
-
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+
   if (windowWidthSize > 768) {
     return (
       <nav className="flex items-center justify-between py-[15px] px-[10px] sm:px-[20px] md:px-[30px] xl:w-[1120px] m-auto">
@@ -72,7 +70,7 @@ function Navbar() {
           </Link>
           <div
             onClick={() => {
-              setIisNavOpen((e) => !e);
+              setIsNavOpen((isOpen) => !isOpen);
             }}
             className="border-2 p-[2px] border-[#cda274] text-xl rounded-md cursor-pointer"
           >
